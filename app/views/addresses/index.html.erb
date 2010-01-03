@@ -1,0 +1,32 @@
+<h1>Listing addresses</h1>
+
+<table>
+  <tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Nickname</th>
+    <th>Address</th>
+    <th>Salutation</th>
+    <th>Birthday</th>
+    <th>Deleted</th>
+  </tr>
+
+<% for address in @addresses %>
+  <tr>
+    <td><%=h address.lastname %></td>
+    <td><%=h address.firstname %></td>
+    <td><%=h address.nickname %></td>
+    <td><%=h address.address %></td>
+    <td><%=h address.salutation %></td>
+    <td><%=h address.birthday %></td>
+    <td><%=h address.deleted %></td>
+    <td><%= link_to 'Show', address %></td>
+    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New address', new_address_path %>

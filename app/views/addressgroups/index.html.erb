@@ -1,0 +1,22 @@
+<h1>Listing addressgroups</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Group</th>
+  </tr>
+
+<% for addressgroup in @addressgroups %>
+  <tr>
+    <td><%=h addressgroup.address.address %></td>
+    <td><%=h addressgroup.group.name %></td>
+    <td><%= link_to 'Show', addressgroup %></td>
+    <td><%= link_to 'Edit', edit_addressgroup_path(addressgroup) %></td>
+    <td><%= link_to 'Destroy', addressgroup, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New addressgroup', new_addressgroup_path %>

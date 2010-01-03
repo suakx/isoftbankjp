@@ -1,0 +1,34 @@
+<h1>Editing template</h1>
+
+<% form_for(@template2) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<% form_for(:email, :url => {:action =>"newemail", :id => params[:id]}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+	  <%= select("group", "id", Group.all.collect {|p| [p.name, p.id]}, {:include_blank => true, :selected => ""}) %>
+	</p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @template2 %> |
+<%= link_to 'Back', templates_path %>

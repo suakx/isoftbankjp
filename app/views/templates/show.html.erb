@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @template2.title %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @template2.subject %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @template2.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_template_path(@template2) %> |
+<%= link_to 'Back', templates_path %>

@@ -1,0 +1,20 @@
+<h1>Editing addressgroup</h1>
+
+<% form_for(@addressgroup) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :group %><br />
+    <%= f.text_field :group %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @addressgroup %> |
+<%= link_to 'Back', addressgroups_path %>

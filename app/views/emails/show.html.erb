@@ -1,0 +1,18 @@
+<p>
+  <b>Address:</b>
+  <%=h @email.address %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%=h @email.template %>
+</p>
+
+<p>
+  <b>Sentmail:</b>
+  <%=h @email.sentmail %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

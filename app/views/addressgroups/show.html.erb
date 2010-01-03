@@ -1,0 +1,13 @@
+<p>
+  <b>Address:</b>
+  <%=h @addressgroup.address.address %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @addressgroup.group.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_addressgroup_path(@addressgroup) %> |
+<%= link_to 'Back', addressgroups_path %>

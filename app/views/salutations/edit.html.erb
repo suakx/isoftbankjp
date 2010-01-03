@@ -1,0 +1,16 @@
+<h1>Editing salutation</h1>
+
+<% form_for(@salutation) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :pattern %><br />
+    <%= f.text_field :pattern %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @salutation %> |
+<%= link_to 'Back', salutations_path %>

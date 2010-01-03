@@ -1,0 +1,38 @@
+<p>
+  <b>Lastname:</b>
+  <%=h @address.lastname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @address.firstname %>
+</p>
+
+<p>
+  <b>Nickname:</b>
+  <%=h @address.nickname %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @address.address %>
+</p>
+
+<p>
+  <b>Salutation:</b>
+  <%=h @address.salutation %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @address.birthday %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%=h @address.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

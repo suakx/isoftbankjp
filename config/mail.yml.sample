@@ -1,0 +1,7 @@
+smtp_server: smtp.softbank.jp
+port: 587
+domain: localhost
+authentication: "login"
+address: hoge@i.softbank.jp
+user_name: "hoge"
+password: "hogehoge"

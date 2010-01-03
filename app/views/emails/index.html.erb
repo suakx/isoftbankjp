@@ -1,0 +1,28 @@
+<h1>Listing emails</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Template</th>
+    <th>Sentmail</th>
+  </tr>
+
+<% for email in @emails %>
+  <tr>
+    <td><%=h email.address.address %></td>
+    <td><%=h email.template.title %></td>
+    <td><%=h email.sentmail %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to 'Edit', edit_email_path(email) %></td>
+    <td><%= link_to 'Destroy', email, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New email', new_email_path %>
+
+<p>
+<%= link_to 'send unsend', :controller => 'main', :action => 'mailsend' %>
+</p>

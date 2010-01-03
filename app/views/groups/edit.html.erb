@@ -1,0 +1,36 @@
+<h1>Editing group</h1>
+
+<% form_for(@group) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<% if @group.addresses.any? %>
+	<% @group.addresses.each do |address| %>
+	  <p>
+    <%= link_to address.address, :controller => 'addresses', :action => 'show', :id => address %>
+    <%= link_to "delete", :controller => 'groups', :action => 'remove_address', :id => @group, :address_id => address, :method => :post %>
+    </p>
+  <% end %>
+<% end %>
+<% addresses = Address.find(:all) - @group.addresses %>
+<% if addresses.any? %>
+  <% form_for(:group, @group, :url => {:controller => 'groups', :action => 'add_addresses', :id => @group}, :method => :post) do |f| %>
+		<fieldset>
+		<% addresses.each do |address| %>
+		<label><%= check_box_tag 'address_ids[]', address.id, false %><%= h address.address %></label>
+    <% end %>
+    <p><%= submit_tag "add" %></p>
+		</fieldset>
+  <% end %>
+<% end %>
+
+<%= link_to 'Show', @group %> |
+<%= link_to 'Back', groups_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lastname: 
+  firstname: 
+  nickname: 
+  address: 
+  salutation: 
+  birthday: 
+  deleted: false
+
+two:
+  lastname: 
+  firstname: 
+  nickname: 
+  address: 
+  salutation: 
+  birthday: 
+  deleted: false
